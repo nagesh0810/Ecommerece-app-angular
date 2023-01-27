@@ -1,0 +1,27 @@
+
+
+.card{
+    
+    width: 50%;
+    /* padding: 40px; */
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    /* background: #87CEEB; */
+    background-color:#D3D3D3 ;
+    margin-top: 40px;
+    border:none;
+}
+
+label{
+    color: rgb(20, 3, 3);
+}
+
+.editcard{
+    width: 50%;
+    position: absolute;
+    left: 27%;
+    background-color:#D3D3D3 ;
+    margin-top: 50px;
+    border:none;
+}

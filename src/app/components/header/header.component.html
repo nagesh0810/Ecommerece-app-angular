@@ -1,0 +1,44 @@
+
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px; margin-left: 40px;" class="fas fa-shipping-fast">&nbsp;
+            </i>
+            <strong style="font-size: 30px;">Flipkart</strong>
+
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+        </div>
+
+        <button routerLink="cart" class="btn btn-primary" style="margin-left:180px">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+
+        <div>
+            <ul class=" nav navbar-nav">
+                <li *ngIf="!loggedIn()" class="nav-item">
+                    <button routerLink="login" class="btn btn-primary logbtn" >
+                        Login
+                    </button> 
+                </li>
+
+                <div *ngIf="loggedIn()" class="dropdown" style="margin-right: 10px;" dropdown>
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+                        Welcome {{loggedinUser}}
+                    </button>
+                    <div class="dropdown-menu dropstyle"  *dropdownMenu>
+                        <a routerLink="products" class="dropdown-item">
+                            <i class="fas fs-tachometer-alt"></i>View Products</a>
+                        <a routerLink="userprofile" class="dropdown-item">
+                            <i class="far fa-user-circle"></i>My Profile</a>
+                        <a (click)="loggedOut()" class="dropdown-item">
+                            <i class="fas fa-signout-alt"></i>Logout</a>
+                    </div>
+                </div>
+            </ul>
+            
+        </div>
+
+    </div>

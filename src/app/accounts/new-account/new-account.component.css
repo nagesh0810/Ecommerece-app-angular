@@ -1,0 +1,37 @@
+.card{
+    
+    width: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #87CEEB;
+    margin-top: 40px;
+    border:none;
+}
+
+.card h1{
+    color: rgb(24, 14, 3);
+    font-style: italic;
+}
+
+label{
+    color: rgb(20, 3, 3);
+}
+
+input{
+    border: 1px solid black;
+}
+
+input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+
+input.ng-touched.ng-valid{
+    border: 2px solid green;
+}
+
+.valid{
+    color: red;
+}

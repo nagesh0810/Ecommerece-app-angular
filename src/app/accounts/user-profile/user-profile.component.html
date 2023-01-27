@@ -1,0 +1,73 @@
+
+   <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div *ngIf="!editing">
+            <h3 class="card-title text-center mt-4">Welcome {{user.firstname}} {{user.lastname}}</h3>
+            <div class="card-body mt-5">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">FirstName: {{user.firstname}}</li>
+                <li class="list-group-item">LastName: {{user.lastname}}</li>
+                <li class="list-group-item">Email: {{user.email}}</li>
+                <li class="list-group-item">Phone: {{user.phone}}</li>
+                <li class="list-group-item">Gender: {{user.gender}}</li>
+              </ul>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-primary" (click)="editing = true">Edit Profile</button>
+            </div>
+          </div>
+        </div>
+    </div>
+   </div> 
+          <div class="container">
+            <div class="row">
+                    <div class="editcard">
+                        <div class="card-body" style="margin-left: 20px; margin-right: 20px;">
+                            <form *ngIf="editing" (ngSubmit)="saveChanges()">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-outline">
+                                            <label for="firstname" class="form-label mt-5">First Name:</label>
+                                            <input type="text" class="form-control" id="firstname" [(ngModel)]="user.firstname" name="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-outline">
+                                            <label for="lastname" class="form-label mt-5">Last Name:</label>
+                                            <input type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname" name="lastname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb-4">
+                                        <div class="form-outline ">
+                                            <label for="email" class="form-label">Email:</label>
+                                            <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email">
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12 mb-4">
+                                        <div class="form-outline ">
+                                            <label for="phone" class="form-label">Phone:</label>
+                                            <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <div class="form-outline ">
+                                            <label for="gender" class="form-label">Gender:</label>
+                                            <input type="text" class="form-control" id="gender" [(ngModel)]="user.gender" name="gender">
+                                        </div>
+                                    </div>
+                                </div>  
+                                <button type="submit" class="btn btn-success mb-5" style="margin-right: 20px;">Save</button>
+                                <button type="button" class="btn btn-secondary mb-5" (click)="cancelEdit()">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>

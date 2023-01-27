@@ -1,0 +1,22 @@
+{
+  "usersdata": [
+    {
+      "firstname": "Ashok",
+      "lastname": "Reddy",
+      "email": "ashok@gmail.com",
+      "phone": 7981911043,
+      "gender": "male",
+      "password": "ashok@123",
+      "id": 1
+    },
+    {
+      "firstname": "Nagesh123",
+      "lastname": "Reddy",
+      "email": "nagesh@gmail.com",
+      "phone": 7981911043,
+      "gender": "male",
+      "password": "nagesh@123",
+      "id": 2
+    }
+  ]
+}

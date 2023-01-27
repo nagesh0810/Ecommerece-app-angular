@@ -1,0 +1,96 @@
+<div class="container py-5 h-100 ">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-3">
+                    <h1 class="mb-2 text-center pb-2">Signup</h1>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-outline">
+                                <label for="fname" class="form-label" style="font-weight: 700;font-size: 17px;">First Name</label>
+                                <input type="text" class="form-control" formControlName="firstname" placeholder="Enter First Name..">
+        
+                                <div class="valid" *ngIf="signupForm.get('firstname').touched 
+                                && signupForm.get('firstname').hasError('required')">FirstName is Required</div>
+                                <div class="valid" *ngIf="signupForm.get('firstname').touched 
+                                &&  signupForm.get('firstname').hasError('minlength')">FirstName should be minimum 5 characters</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-outline">
+                                <label for="lname" class="form-label" style="font-weight: 700;font-size: 17px;">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastname" placeholder="Enter Last Name..">
+                                
+                                <div class="valid" *ngIf="signupForm.get('lastname').touched 
+                                && signupForm.get('lastname').hasError('required')">LastName is Required</div>
+                                <div class="valid" *ngIf="signupForm.get('lastname').touched 
+                                &&  signupForm.get('lastname').hasError('minlength')">LastName should be minimum 4 characters</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline ">
+                                <label for="email" class="form-label" style="font-weight: 700;font-size: 17px;">Email address</label>
+                                <input type="email" class="form-control" formControlName="email" placeholder="Enter email..">
+
+                                <div class="valid" *ngIf="signupForm.get('email').touched 
+                                && signupForm.get('email').hasError('required')">Email is Required</div>
+                                <div class="valid" *ngIf="signupForm.get('email').touched 
+                                &&  signupForm.get('email').hasError('email')">Enter correct email address</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label for="phone" class="form-label" style="font-weight: 700;font-size: 17px;">Phone</label>
+                                <input type="number" class="form-control" formControlName="phone" placeholder="Enter Phone Number..">
+
+                                <div class="valid" *ngIf="signupForm.get('phone').touched 
+                                && signupForm.get('phone').hasError('required')">Phone number is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h6 class="mb-2 pb-1">Gender: </h6>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="maleGender" style="font-weight: 700;font-size: 17px;">Male</label>
+                                <input class="form-check-input" type="radio" id="male" value="male" formControlName="gender">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="femaleGender" style="font-weight: 700;font-size: 17px;">Female</label>
+                                <input class="form-check-input" type="radio" id="female" value="female" formControlName="gender">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="others" style="font-weight: 700;font-size: 17px;">Others</label>
+                                <input class="form-check-input" type="radio" id="others" value="others" formControlName="gender">
+                            </div>
+
+                            <div class="valid" *ngIf="signupForm.get('gender').touched 
+                            && signupForm.get('gender').hasError('required')">Gender is Required</div>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <div class="form-outline">
+                                <label for="password" class="form-lable" style="font-weight: 700;font-size: 17px;">Password</label>
+                                <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+                            </div>
+
+                            <div class="valid" *ngIf="signupForm.get('password').touched 
+                                && signupForm.get('password').hasError('required')">Password is Required</div>
+                                <div class="valid" *ngIf="signupForm.get('password').touched 
+                                &&  signupForm.get('password').hasError('minlength')">Password should be minimum 8 characters</div>
+                        </div>
+                    </div> 
+                    <button type="submit" class="btn btn-primary mt-3">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
