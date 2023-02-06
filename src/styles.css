@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+.carousel-caption {
+    position: absolute;
+    right: 20%;
+    bottom: 1.25rem;
+    left: 20%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    background-color: #00000060;
+    border-radius: 10px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    /* display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%; */
+    background-color: black;
+    /* border-radius: 5px; */
+}

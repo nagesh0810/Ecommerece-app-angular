@@ -10,13 +10,27 @@
       "id": 1
     },
     {
-      "firstname": "Nagesh123",
+      "firstname": "Nagesh",
       "lastname": "Reddy",
       "email": "nagesh@gmail.com",
       "phone": 7981911043,
       "gender": "male",
       "password": "nagesh@123",
       "id": 2
+    }
+  ],
+  "payments": [
+    {
+      "orderID": "0S794849U3666751T",
+      "id": 1
+    },
+    {
+      "orderID": "8RT88364411465131",
+      "id": 2
+    },
+    {
+      "orderID": "94135077AK081721U",
+      "id": 3
     }
   ]
 }

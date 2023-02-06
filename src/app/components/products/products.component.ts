@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -11,7 +14,10 @@ export class ProductsComponent implements OnInit {
   productList:any =[];
 public filterCategory : any;
   searchKey:string='';
-  constructor(private api:ApiService , private cartService:CartService){}
+  productSlider:any=[];
+  selectedProduct:any=[];
+  constructor(private api:ApiService , private cartService:CartService, private http:HttpClient,
+    private router:Router,private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.api.getProduct().subscribe(res => {
@@ -27,6 +33,10 @@ public filterCategory : any;
     this.cartService.search.subscribe((val:any)=>{
       this.searchKey = val;
     })
+
+    this.api.popularProducts().subscribe((data:any) => {
+      this.productSlider= data;
+    })
   }
 
   addtocart(item:any){
@@ -39,6 +49,13 @@ public filterCategory : any;
         return a;
       }
     })
+  }
+
+  viewDetails(item) {
+    this.router.navigate(['/product-details'], { queryParams: { product: JSON.stringify(item) } });
+  }
+  productDetails(item){
+    this.router.navigate(['/slider-product-details'], { queryParams: { product: JSON.stringify(item) } });
   }
 
 }

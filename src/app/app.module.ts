@@ -13,8 +13,13 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { UserProfileComponent } from './accounts/user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { VerifyemailComponent } from './accounts/verifyemail/verifyemail.component';
-import { ResetpasswordComponent } from './accounts/verifyemail/resetpassword/resetpassword.component';
+import { PasswordComponent } from './accounts/password/password.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
+import { SliderProductDetailsComponent } from './components/products/slider-product-details/slider-product-details.component';
+import { FooterComponent } from './footer/footer.component';
+import { PaymentComponent } from './components/payment/payment.component';
+
 
 
 
@@ -29,8 +34,11 @@ import { ResetpasswordComponent } from './accounts/verifyemail/resetpassword/res
     NewAccountComponent,
     FilterPipe,
     UserProfileComponent,
-    VerifyemailComponent,
-    ResetpasswordComponent
+    PasswordComponent,
+    ProductDetailsComponent,
+    SliderProductDetailsComponent,
+    FooterComponent,
+    PaymentComponent
     
 
   ],
@@ -40,6 +48,7 @@ import { ResetpasswordComponent } from './accounts/verifyemail/resetpassword/res
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    NgbModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot()
   ],

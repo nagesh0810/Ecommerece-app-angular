@@ -1,0 +1,9 @@
+footer {
+    background-color: rgba(51, 51, 51, 0.836);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    height: 170px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+  }

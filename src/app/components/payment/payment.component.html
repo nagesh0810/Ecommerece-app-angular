@@ -1,0 +1,20 @@
+
+<div class="container">
+          <div class="card">
+              <div *ngIf="!paymentSuccess">
+                <h1 style="margin-bottom: 30px;">Payment Details</h1>
+                <h3 *ngIf="totalAmount" style="margin-bottom: 30px;">Total Amount: ${{ totalAmount }}</h3>
+                <h4>Use any of the below payment methods</h4>
+              </div>
+              <div id="paypal-button-container"></div>
+                <div *ngIf="paymentSuccess">
+                  <h2>Payment Successful!</h2>
+                  <button class="btn btn-primary mt-3" (click)="goToHome()">Go to Home</button>
+                 </div>
+              </div>
+          </div>
+
+             
+    
+    
+    

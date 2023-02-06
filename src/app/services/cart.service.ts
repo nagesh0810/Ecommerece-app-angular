@@ -26,6 +26,12 @@ export class CartService {
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
     console.log(this.cartItemList)
+    if(product.quantity){
+      product.quantity++;
+    }
+    else{
+      product.quantity=1;
+    }
   }
 
   getTotalPrice() : number{

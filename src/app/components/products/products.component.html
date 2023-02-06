@@ -1,4 +1,4 @@
-<div class="card-top-container">
+<!-- <div class="card-top-container"> -->
     <div class="card-top container-fluid">
         <div class="container d-flex">
             <div class="item">
@@ -27,7 +27,19 @@
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->
+
+<ngb-carousel *ngIf="productSlider">
+    <ng-template class="product" *ngFor="let item of productSlider" ngbSlide>
+            <div class="picsum-image-wrapper">
+                <img class="product-image" src="{{item.image}}" (click)="productDetails(item)" alt="Random first slide">
+            </div>
+            <div class="carousel-caption">
+                <h3 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h3>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+            </div> 
+    </ng-template>
+</ngb-carousel>
 
 <div class="container">
     <div class="row">
@@ -37,9 +49,19 @@
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
-                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-secondary" (click)=viewDetails(item)>View Details</button>
+                    </div>
+                </div>
             </div>
         </ng-container>
 
     </div>
 </div>
+
+<app-footer></app-footer>
+

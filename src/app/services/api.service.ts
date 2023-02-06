@@ -15,4 +15,8 @@ export class ApiService {
       return res;
     }))
   }
+
+  popularProducts(){
+    return this.http.get("https://fakestoreapi.com/products?limit=5");
+  }
 }
